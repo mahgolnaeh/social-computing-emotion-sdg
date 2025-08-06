@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/.env">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.env" />
+              <option name="originalContent" value="OPENROUTER_API_KEY=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" />
+              <option name="updatedContent" value="OPENROUTER_API_KEY=your_new_api_key_here" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/models/emotion_detector.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/models/emotion_detector.py" />
+              <option name="originalContent" value="from typing import Optional&#10;import os&#10;from src.schemas.emotion_output import EmotionClassificationResult&#10;from src.utils.llm_client import LLMClient&#10;from src.configs.model_selector import get_model_and_params&#10;&#10;model_name, model_params = get_model_and_params(&quot;test&quot;)&#10;&#10;# Get API key from environment variable&#10;api_key = os.getenv(&quot;OPENROUTER_API_KEY&quot;)&#10;if not api_key:&#10;    raise ValueError(&quot;OPENROUTER_API_KEY environment variable is not set&quot;)&#10;&#10;client = LLMClient(model=model_name, api_key=api_key)&#10;&#10;async def detect_emotion(text: str) -&gt; Optional[EmotionClassificationResult]:&#10;    prompt = (&#10;        &quot;Analyze the emotional tone of the following social media post &quot;&#10;        &quot;and respond with a single JSON object that includes only one of these emotions:\n\n&quot;&#10;        &quot;Joy, Sadness, Anger, Fear, Disgust, Anxiety, Frustration, Hope, Confusion\n\n&quot;&#10;        f&quot;Post: {text}\n\n&quot;&#10;        &quot;Return only this format:\n&quot;&#10;        '{&quot;emotion&quot;: &quot;YourChosenEmotion&quot;}'&#10;    )&#10;&#10;    response = await client.call(prompt=prompt, structured=True)&#10;&#10;    if isinstance(response, dict):&#10;        try:&#10;            return EmotionClassificationResult(**response)&#10;        except Exception:&#10;            return None&#10;    return None&#10;" />
+              <option name="updatedContent" value="from typing import Optional&#10;import os&#10;from dotenv import load_dotenv&#10;from src.schemas.emotion_output import EmotionClassificationResult&#10;from src.utils.llm_client import LLMClient&#10;from src.configs.model_selector import get_model_and_params&#10;&#10;# Load environment variables&#10;load_dotenv()&#10;&#10;model_name, model_params = get_model_and_params(&quot;test&quot;)&#10;&#10;# Get API key from environment variable&#10;api_key = os.getenv(&quot;OPENROUTER_API_KEY&quot;)&#10;if not api_key:&#10;    raise ValueError(&quot;OPENROUTER_API_KEY environment variable is not set&quot;)&#10;&#10;client = LLMClient(model=model_name, api_key=api_key)&#10;&#10;async def detect_emotion(text: str) -&gt; Optional[EmotionClassificationResult]:&#10;    prompt = (&#10;        &quot;Analyze the emotional tone of the following social media post &quot;&#10;        &quot;and respond with a single JSON object that includes only one of these emotions:\n\n&quot;&#10;        &quot;Joy, Sadness, Anger, Fear, Disgust, Anxiety, Frustration, Hope, Confusion\n\n&quot;&#10;        f&quot;Post: {text}\n\n&quot;&#10;        &quot;Return only this format:\n&quot;&#10;        '{&quot;emotion&quot;: &quot;YourChosenEmotion&quot;}'&#10;    )&#10;&#10;    response = await client.call(prompt=prompt, structured=True)&#10;&#10;    if isinstance(response, dict):&#10;        try:&#10;            return EmotionClassificationResult(**response)&#10;        except Exception:&#10;            return None&#10;    return None" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,99 @@
+{
+  "openai/gpt-3.5-turbo": {
+    "endpoint": "chat/completions",
+    "supports_structured_output": false,
+    "supports_streaming": true,
+    "default_temperature": 0.7,
+    "default_top_p": 1.0,
+    "max_tokens": 2048
+  },
+  "mistralai/mixtral-8x7b-instruct": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop"],
+    "supports_structured_output": false,
+    "supports_streaming": false,
+    "default_temperature": 1.1,
+    "default_top_p": 0.9,
+    "max_tokens": 8192
+  },
+  "openai/gpt-4.1-mini": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop"],
+    "default_temperature": 0.9,
+    "default_top_p": 0.95,
+    "max_tokens": 2048
+  },
+  "anthropic/claude-sonnet-4": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop", "response_format"],
+    "default_temperature": 0.9,
+    "default_top_p": 0.95,
+    "max_tokens": 200000
+  },
+  "google/gemini-2.5-flash": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens"],
+    "default_temperature": 0.7,
+    "default_top_p": 1.0,
+    "max_tokens": 2048
+  },
+  "anthropic/claude-opus-4.1": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop"],
+    "supports_structured_output": true,
+    "supports_streaming": true,
+    "default_temperature": 0.9,
+    "default_top_p": 0.95,
+    "max_tokens": 200000
+  },
+  "openai/gpt-4-turbo": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop","presence_penalty","frequency_penalty"],
+    "supports_structured_output": true,
+    "supports_streaming": true,
+    "default_temperature": 0.7,
+    "default_top_p": 1.0,
+    "max_tokens": 128000
+  },
+  "meta-llama/llama-3.1-8b-instruct": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop"],
+    "supports_structured_output": false,
+    "supports_streaming": true,
+    "default_temperature": 0.3,
+    "default_top_p": 0.9,
+    "max_tokens": 131072,
+    "use_case": "sentiment_analysis"
+  },
+  "mistralai/mistral-7b-instruct": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop"],
+    "supports_structured_output": false,
+    "supports_streaming": true,
+    "default_temperature": 0.2,
+    "default_top_p": 0.95,
+    "max_tokens": 32768,
+    "use_case": "sentiment_analysis"
+  },
+  "google/gemini-1.5-flash": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens"],
+    "supports_structured_output": true,
+    "supports_streaming": true,
+    "default_temperature": 0.4,
+    "default_top_p": 0.95,
+    "max_tokens": 8192,
+    "use_case": "sentiment_analysis"
+  },
+  "anthropic/claude-3.5-sonnet": {
+    "endpoint": "chat/completions",
+    "supported_params": ["temperature", "top_p", "max_tokens", "stop"],
+    "supports_structured_output": true,
+    "supports_streaming": true,
+    "default_temperature": 0.3,
+    "default_top_p": 0.9,
+    "max_tokens": 200000,
+    "use_case": "sentiment_analysis",
+    "strengths": ["short_text", "nuance_detection", "emotion_classification"]
+  }
+}
