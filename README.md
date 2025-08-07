@@ -1,4 +1,4 @@
-# 🌐 Social Computing Project – Emotion-Aware SDG Response System
+# Social Computing Project – Emotion-Aware SDG Response System
 
 This project analyzes short social media posts to detect SDG relevance and emotional tone, then generates supportive responses aligned with both.  
 It is modular, LLM-powered, and designed for human-centered, empathetic automation.
